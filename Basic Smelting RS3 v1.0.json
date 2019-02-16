@@ -1,0 +1,552 @@
+{
+  "Variables": [
+    {
+      "name": "Furnace",
+      "value": "Furnace",
+      "type": "GO"
+    },
+    {
+      "name": "Smelt",
+      "value": "Smelt",
+      "type": "ACTION"
+    },
+    {
+      "name": "Smelt ores",
+      "value": "Smelt ores",
+      "type": "CHECKPOINT"
+    },
+    {
+      "name": "bar",
+      "value": "bar",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Deposit-All",
+      "value": "Deposit-All",
+      "type": "ACTION"
+    },
+    {
+      "name": "Select",
+      "value": "",
+      "type": "ACTION"
+    },
+    {
+      "name": "37",
+      "value": "",
+      "type": "INTERFACE_OBJECT"
+    },
+    {
+      "name": "163",
+      "value": "163",
+      "type": "NUMBER"
+    },
+    {
+      "name": "167",
+      "value": "167",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Deposit all",
+      "value": "37",
+      "type": "INTERFACE_OBJECT"
+    },
+    {
+      "name": "Begin project",
+      "value": "37",
+      "type": "INTERFACE_OBJECT"
+    },
+    {
+      "name": "You lack the materials or inventory space to create this.",
+      "value": "You lack the materials or inventory space to create this.",
+      "type": "STRING"
+    },
+    {
+      "name": "Al karid furnace",
+      "value": "Coordinate(3274, 3189, 0)",
+      "type": "COORDINATE"
+    },
+    {
+      "name": "5",
+      "value": "5",
+      "type": "NUMBER"
+    },
+    {
+      "name": "You lack the requirements to create:",
+      "value": "You lack the requirements to create:",
+      "type": "STRING"
+    }
+  ],
+  "NodeCollection": [
+    {
+      "name": "StartCondition",
+      "base": {
+        "id": "fa7368bc-f610-4958-bcfa-58dbb3fc906e",
+        "position": {
+          "x": "-27.0",
+          "y": "-1.0"
+        },
+        "flowTasks": {
+          "success": "a26503ee-3418-4e5e-93cf-196bd83fb82f"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "GameMode": "RS3",
+        "IntervalLow": 1400.7721584460226,
+        "IntervalHigh": 1949.8183364639158
+      }
+    },
+    {
+      "name": "GameObjectCondition",
+      "base": {
+        "id": "689e67a7-5ebf-45d4-ad9c-1b4c5b595f0d",
+        "position": {
+          "x": "242.0",
+          "y": "765.0"
+        },
+        "flowTasks": {
+          "success": "12383111-2264-43af-a9d8-4913d05ef328"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InventoryCondition",
+      "base": {
+        "id": "12383111-2264-43af-a9d8-4913d05ef328",
+        "position": {
+          "x": "241.0",
+          "y": "989.0"
+        },
+        "flowTasks": {
+          "success": "a9d19ec5-c095-461d-adab-64184d07227a",
+          "failure": "19564972-dbc4-49a9-a3bb-1febf9cefa82"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [],
+        "ItemRegex": true,
+        "Condition": "Is Full"
+      }
+    },
+    {
+      "name": "InterfaceCondition",
+      "base": {
+        "id": "19564972-dbc4-49a9-a3bb-1febf9cefa82",
+        "position": {
+          "x": "240.0",
+          "y": "1190.0"
+        },
+        "flowTasks": {
+          "success": "ce181644-2eae-4e00-837a-919c0dfe971d",
+          "failure": "ef42e43d-4ee0-4a62-8dcc-8611b69b1628"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": true,
+          "bool1": false,
+          "bool2": false,
+          "list4": [
+            "163"
+          ],
+          "TypeList": [
+            "CONTAINER"
+          ],
+          "type": "ICQuery"
+        }
+      },
+      "variables": {
+        "TextValues": [],
+        "TextRegex": false,
+        "ActionValues": [
+          "Select"
+        ],
+        "ActionRegex": true,
+        "InterfaceObject": "Begin project",
+        "Cache container": true
+      }
+    },
+    {
+      "name": "InterfaceAction",
+      "base": {
+        "id": "ce181644-2eae-4e00-837a-919c0dfe971d",
+        "position": {
+          "x": "754.0",
+          "y": "1185.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Condition": "Click",
+        "Values": [
+          "Begin project"
+        ],
+        "ActionValues": [],
+        "ItemRegex": false,
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "f41e569c-881e-4dea-b952-e5bfc9aabdb0",
+        "position": {
+          "x": "754.0",
+          "y": "1477.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Condition": "GameObject",
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InterfaceCondition",
+      "base": {
+        "id": "a9d19ec5-c095-461d-adab-64184d07227a",
+        "position": {
+          "x": "1136.0",
+          "y": "910.0"
+        },
+        "flowTasks": {
+          "success": "9d5540f5-6abf-4277-8026-229deb579e4b",
+          "failure": "dec4b25d-2cb7-47f6-94c8-7239331676fd"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": true,
+          "bool1": false,
+          "bool2": false,
+          "list4": [
+            "167"
+          ],
+          "TypeList": [
+            "CONTAINER"
+          ],
+          "type": "ICQuery"
+        }
+      },
+      "variables": {
+        "TextValues": [],
+        "TextRegex": false,
+        "ActionValues": [
+          "Select"
+        ],
+        "ActionRegex": true,
+        "InterfaceObject": "Deposit all",
+        "Cache container": true
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "2a11bc41-271e-42a0-897a-6e11d4ac1ada",
+        "position": {
+          "x": "1612.0",
+          "y": "1197.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Condition": "GameObject",
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InterfaceAction",
+      "base": {
+        "id": "9d5540f5-6abf-4277-8026-229deb579e4b",
+        "position": {
+          "x": "1613.0",
+          "y": "905.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Condition": "Click",
+        "Values": [
+          "Deposit all"
+        ],
+        "ActionValues": [],
+        "ItemRegex": false,
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "StopAction",
+      "base": {
+        "id": "18493b58-4500-4af9-97cb-a4349bcda22f",
+        "position": {
+          "x": "768.0",
+          "y": "205.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      }
+    },
+    {
+      "name": "MakeXWindowCondition",
+      "base": {
+        "id": "48d34d97-cd4f-4fa8-818d-e618b71a9cbd",
+        "position": {
+          "x": "245.0",
+          "y": "563.0"
+        },
+        "flowTasks": {
+          "failure": "689e67a7-5ebf-45d4-ad9c-1b4c5b595f0d"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Values": [],
+        "ItemRegex": false,
+        "Condition": "Is crafting"
+      }
+    },
+    {
+      "name": "GameObjectCondition",
+      "base": {
+        "id": "dec4b25d-2cb7-47f6-94c8-7239331676fd",
+        "position": {
+          "x": "1137.0",
+          "y": "1231.0"
+        },
+        "flowTasks": {
+          "success": "2a11bc41-271e-42a0-897a-6e11d4ac1ada",
+          "failure": "dd0ac4f7-debc-4329-b34c-d4d03b503b0b"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "TraversalAction",
+      "base": {
+        "id": "dd0ac4f7-debc-4329-b34c-d4d03b503b0b",
+        "position": {
+          "x": "1163.0",
+          "y": "1452.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Condition": "To coordinates:",
+        "Coordinates": [
+          "Al karid furnace"
+        ],
+        "Exact": false,
+        "Radius": "WEB_FULL"
+      }
+    },
+    {
+      "name": "GameObjectCondition",
+      "base": {
+        "id": "ef42e43d-4ee0-4a62-8dcc-8611b69b1628",
+        "position": {
+          "x": "241.0",
+          "y": "1509.0"
+        },
+        "flowTasks": {
+          "success": "f41e569c-881e-4dea-b952-e5bfc9aabdb0",
+          "failure": "486baa94-64b0-4e87-a5f3-7b983af1e54b"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "TraversalAction",
+      "base": {
+        "id": "486baa94-64b0-4e87-a5f3-7b983af1e54b",
+        "position": {
+          "x": "279.0",
+          "y": "1733.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Condition": "To coordinates:",
+        "Coordinates": [
+          "Al karid furnace"
+        ],
+        "Exact": false,
+        "Radius": "WEB_FULL"
+      }
+    },
+    {
+      "name": "ChatBoxCondition",
+      "base": {
+        "id": "a26503ee-3418-4e5e-93cf-196bd83fb82f",
+        "position": {
+          "x": "244.0",
+          "y": "223.0"
+        },
+        "flowTasks": {
+          "success": "18493b58-4500-4af9-97cb-a4349bcda22f",
+          "failure": "5a81daa7-5d9e-4133-98cc-7d80e131a1f2"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Values": [
+          "You lack the materials or inventory space to create this.",
+          "You lack the requirements to create:"
+        ],
+        "ItemRegex": true
+      }
+    },
+    {
+      "name": "PlayerCondition",
+      "base": {
+        "id": "5a81daa7-5d9e-4133-98cc-7d80e131a1f2",
+        "position": {
+          "x": "244.0",
+          "y": "361.0"
+        },
+        "flowTasks": {
+          "failure": "48d34d97-cd4f-4fa8-818d-e618b71a9cbd"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "within": "",
+          "MinLvl": "",
+          "MaxLvl": "",
+          "type": "NpcQuery"
+        }
+      },
+      "variables": {
+        "Values": [],
+        "ValueRegex": false,
+        "Condition": "Is animating (2s delay):"
+      }
+    }
+  ],
+  "BotCategory": "OTHER",
+  "inventoryData": {},
+  "internalData": {
+    "Mouse multiplier": 1.0,
+    "Mouse path": "MLP_PATH_GENERATOR",
+    "Disable advanced": false
+  }
+}
